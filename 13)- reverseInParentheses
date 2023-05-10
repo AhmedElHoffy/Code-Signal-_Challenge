@@ -1,0 +1,33 @@
+void swapC(char &a, char &b){
+    char temp;
+    temp =a;
+    a=b;
+    b=temp;
+}
+
+string solution(string inputString) {
+   stack<int> s;
+   int st,end;
+   int n=inputString.size();
+   string outputstring;
+   for(int i=0;i<n;i++){
+       if(inputString[i]=='('){
+           s.push(i);
+       }else if(inputString[i]==')'){
+           st=s.top()+1;
+           s.pop();
+           end=i-1;
+           while(st<end){
+               swapC( inputString[st], inputString[end]);
+               st++;
+               end--;
+           }
+       }
+   }
+   for (int j=0;j<n;j++){
+       if(inputString[j]!='(' && inputString[j]!=')'){
+           outputstring+=inputString[j];
+       }
+   }
+return outputstring;
+}
