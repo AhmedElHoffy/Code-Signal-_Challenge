@@ -1,0 +1,18 @@
+int solution(vector<int> statues) {
+    int n=statues.size();
+    int minstatue=INT_MAX;
+    int maxstatue=INT_MIN;
+    map<int,int>UniqueStatues;
+    for (int i=0;i<n;i++){
+        if(statues[i]<minstatue) minstatue=statues[i];
+        if(statues[i]>maxstatue)maxstatue=statues[i];
+        UniqueStatues[statues[i]]=statues[i];
+    }
+    int counter=0;
+    
+    for(int j=minstatue;j<=maxstatue;j++){
+        
+        if(UniqueStatues.count(j)==0) counter++;
+    }
+    return counter;
+}
