@@ -1,0 +1,7 @@
+
+int solution(int param1, int param2) {
+     int sol = param1 + param2;
+     
+     return sol;
+
+}
