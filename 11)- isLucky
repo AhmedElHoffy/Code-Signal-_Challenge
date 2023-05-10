@@ -1,0 +1,27 @@
+bool solution(int n) {
+    int temp=n;
+    int num_digits=0; // number of digits for the integer
+    while (temp>0){
+        temp/=10;
+        num_digits++;
+    }
+    temp=n;
+    int mid_check=0;
+    int sum_halfEnd=0;
+    int sum_halfstart=0;
+    while (temp>0){
+        if (mid_check!=num_digits/2){
+             sum_halfEnd+=temp%10;
+             temp/=10;
+             mid_check++;
+        }else{
+            sum_halfstart+=temp%10;
+            temp/=10;
+        }
+    }
+     if (sum_halfstart==sum_halfEnd){
+            return true;
+        }else{
+            return false;
+        }
+}
