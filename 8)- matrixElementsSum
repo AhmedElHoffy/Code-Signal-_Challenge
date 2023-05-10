@@ -1,0 +1,15 @@
+int solution(vector<vector<int>> matrix) {
+    int sum=0;
+    int rows=matrix.size();
+    int cols=matrix[0].size();
+    unordered_map<int,int> hauntedrooms;
+    for(int i=0;i<rows;i++){
+        for (int j=0;j<cols;j++){
+            if(matrix[i][j]==0){
+                hauntedrooms[j]=j;
+            }
+            if(hauntedrooms.count(j)==0)sum+=matrix[i][j];
+        }
+    }
+    return sum;
+}
