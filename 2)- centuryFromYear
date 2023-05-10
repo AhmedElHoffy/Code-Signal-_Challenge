@@ -1,0 +1,6 @@
+int solution(int year) {
+    int result=INT_MIN;
+    
+    return ceil(year/100.0);
+
+}
